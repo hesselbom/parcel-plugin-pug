@@ -7,6 +7,7 @@ declare const _default: {
             html: any;
         };
         shouldInvalidate(): boolean;
+        generateBundleName(): string;
         addDependency(path: string, options: Object): any;
         addURLDependency(url: string): string;
         name: string;

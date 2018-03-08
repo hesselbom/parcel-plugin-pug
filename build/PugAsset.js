@@ -81,5 +81,9 @@ module.exports = class PugAsset extends Asset_1.Asset {
     shouldInvalidate() {
         return false;
     }
+    generateBundleName() {
+        const ext = '.' + this.type;
+        return path.basename(this.name, path.extname(this.name)) + ext;
+    }
 };
 //# sourceMappingURL=PugAsset.js.map
