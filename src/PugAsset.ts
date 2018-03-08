@@ -67,6 +67,10 @@ export = class PugAsset extends Asset {
         for (const attr of node.attrs) {
           const elements = ATTRS[attr.name];
           if (node.type === 'Tag' && elements && elements.indexOf(node.name) > -1) {
+            if (["'", '"'].indexOf(attr.val.charAt(0)) < 0) {
+              return;
+            }
+
             let assetPath = attr.val.substring(1, attr.val.length - 1);
             assetPath = this.addURLDependency(assetPath);
             if (!isURL(assetPath)) {
