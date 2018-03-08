@@ -98,4 +98,9 @@ export = class PugAsset extends Asset {
   public shouldInvalidate(): boolean {
     return false;
   }
+
+  public generateBundleName(): string {
+    const ext = '.' + this.type;
+    return path.basename(this.name, path.extname(this.name)) + ext;
+  }
 };
